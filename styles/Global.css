@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    text-rendering: optimizeLegibility;
+}
+
+.button {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    @apply font-semibold;
+}
+
+.button:hover {
+    @apply bg-primary-1 scale-105 transition-all
+}
+
+.button:active {
+    @apply ring-4  ring-primary-2 ring-offset-2
+}
+
+.place-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a, h1, h2, h3, h4, h5, h6, p, button, span {
+    font-family: Inter, 'sans-serif', 'segoeUI';
+    @apply text-base
+}
+.primary-ring {
+    @apply focus:transition-all ring-offset-[3px] ring-primary-1;
+}
