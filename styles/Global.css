@@ -11,15 +11,15 @@
     display: flex;
     height: 40px;
     justify-content: center;
-    @apply font-semibold;
+    @apply font-semibold ;
 }
 
 .button:hover {
     @apply bg-primary-1 scale-105 transition-all
 }
 
-.button:active {
-    @apply ring-4  ring-primary-2 ring-offset-2
+.button:focus {
+    @apply  ring-primary-0 ring-offset-2
 }
 
 .place-center {

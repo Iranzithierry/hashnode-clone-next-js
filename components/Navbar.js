@@ -6,6 +6,7 @@ import ManageSection from './ManageSection';
 import HeaderTabs from './HeaderTabs';
 import Canvas from './Canvas';
 import * as SolidIcon from '@heroicons/react/24/solid'
+import { AuthProvider } from '@/auth/Auth'
 export default function Navbar() {
     const [showCanvas, setShowCanvas] = useState(false);
     const closeCanvas = () => {
@@ -13,10 +14,10 @@ export default function Navbar() {
     }
 
     return (
-        <nav className='flex flex-col gap-y-2 md:gap-y-10 w-full justify-between items-center'>
-            <div className='flex w-full justify-between items-center px-0 md:px-16'>
-                <div className='flex sm:hidden'>
-                    <button onClick={() => setShowCanvas(true)} className='cursor-pointer rounded-full hover:bg-gray-0 dark:hover:bg-dark-1 p-2 transition-colors duration-300 focus:ring-4 primary-ring'>
+        <nav className='flex flex-col gap-y-2 md:gap-y-4 w-full justify-between items-center max-w-[2236px] pb-2'>
+            <div className='flex w-full justify-between items-center'>
+                <div className='flex md:hidden'>
+                    <button onClick={() => setShowCanvas(true)} className='sm:hidden cursor-pointer rounded-full hover:bg-gray-0 dark:hover:bg-dark-1 p-2 transition-colors duration-300 focus:ring-4 primary-ring'>
                         <SolidIcon.Bars3Icon className="h-[1.8rem] w-[1.8rem] md:w-[2rem] md:h-[2rem] text-black dark:text-white" />
                     </button>
                 </div>
@@ -24,7 +25,10 @@ export default function Navbar() {
                     <Logo />
                 </a>
                 <div>
-                    <NavbarSwitches />
+                    <AuthProvider>
+                        <NavbarSwitches />
+                    </AuthProvider>
+
                 </div>
             </div>
             <a className='cursor-pointer flex md:hidden rounded-full focus:ring-4 primary-ring' href='#'>
@@ -34,8 +38,10 @@ export default function Navbar() {
                 <div className='place-center w-full md:w-fit'>
                     <SocialMediaHandler />
                 </div>
-                <div className='place-center w-full md:w-fit'>
-                    <ManageSection />
+                <div className='place-center w-full md:w-fit'  placeholder='blur'>
+                    <AuthProvider>
+                        <ManageSection />
+                    </AuthProvider>
                 </div>
             </div>
             <div className='hidden sm:flex'>

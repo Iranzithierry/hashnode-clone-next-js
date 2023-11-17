@@ -6,10 +6,13 @@ export default function Button(
         backgroundColor,
         textColor,
         classNameArg,
+        fontClassArg,
         disabled,
-        showLoader,
-        loaderSize = 'small',
-        loaderSide = 'right',
+        showSpinner = false,
+        spinnerColor = null,
+        spinnerSize = null,
+        spinnerSide = 'right',
+        spinnerBgColor = null,
         icon,
     }
 ) {
@@ -17,27 +20,30 @@ export default function Button(
         <button
 
             disabled={disabled || false}
-            className={`${showLoader || icon ? '!justify-between' : '!justify-center'}
-                        ${classNameArg || ''}
-                        ${backgroundColor || 'bg-primary-0'}
-                        ${textColor || 'text-white'}`
+            className={`!justify-center ${classNameArg || ''} ${backgroundColor || 'bg-primary-0'}`
             }
             onClick={onPress}
         >
-            {showLoader && loaderSide === 'left' && !disabled && (
+            {showSpinner && spinnerSide === 'left' && !disabled && (
                 <Spinner
-                    Size={loaderSize}
-                    Color={loaderColor}
+                    Size={spinnerSize}
+                    Color={spinnerColor}
+                    bgColor={spinnerBgColor}
                     Class={'ml-1'}
                 />
             )}
-            {icon}
-            {children}
-            {showLoader && loaderSide === 'right' && !disabled && (
+            <span>
+                {icon}
+            </span>
+            <p className={`${fontClassArg || ''} ${textColor || 'text-white'} font-inter`}>
+                {children}
+            </p>
+            {showSpinner && spinnerSide === 'right' && !disabled && (
                 <Spinner
-                    Size={loaderSize}
-                    Color={loaderColor}
-                    Class={'mr-1'}
+                    Size={spinnerSize}
+                    Color={spinnerColor}
+                    bgColor={spinnerBgColor}
+                    Class={'ml-2'}
                 />
             )}
         </button>

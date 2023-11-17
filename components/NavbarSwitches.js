@@ -1,16 +1,17 @@
+import { useEffect, useState, Suspense } from 'react';
+import { useAuth } from '@/auth/Auth'
 import * as SolidIcon from '@heroicons/react/24/solid'
 import * as OutlinedIcon from '@heroicons/react/24/outline'
-import Logo from './Logo';
-import { useEffect, useState } from 'react';
 import Modal from './Modal';
-import { useCallback } from 'react';
+import LoggedOutDropDown from './LoggedOutDropDown';
+import LoggedInDropDown from './LoggedInDropDown';
 export default function NavbarSwitches() {
     const [isDark, setIsDark] = useState(false)
     const [modal, showModal] = useState(false)
     const [queryOld, setQueryOld] = useState('');
     const [queryNew, setQueryNew] = useState('');
     const [data, setData] = useState('')
-
+    const { isLoggedIn, login, logout } = useAuth();
     const changeTheme = () => {
         if (localStorage.theme === 'dark') {
             localStorage.theme = "light";
@@ -59,9 +60,13 @@ export default function NavbarSwitches() {
                         <OutlinedIcon.MoonIcon className="h-[1.8rem] w-[1.8rem] md:w-[2rem] md:h-[2rem]  text-black" />
                     )}
             </button>
-            <button className='cursor-pointer rounded-full focus:ring-4 primary-ring'>
-                <Logo Size={'sm'} />
-            </button>
+            <Suspense fallback={<p>Loading feed...</p>}>
+                {isLoggedIn ? (
+                    <LoggedInDropDown />
+                ) : (
+                    <LoggedOutDropDown login={login} />
+                )}
+            </Suspense>
 
             <Modal show={modal} onClose={closeModal}>
                 <div className='w-full mx-auto space-y-2'>
