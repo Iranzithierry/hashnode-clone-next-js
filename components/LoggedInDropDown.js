@@ -62,7 +62,7 @@ export default function LoggedInDropDown() {
                                     <span>
                                         <item.Icon className="h-[1rem] w-[1rem] md:w-[1.2rem] md:h-[1.2rem] text-slate-500 dark:text-white" />
                                     </span>
-                                    <p className='font-inter font-semibold text-sm text-slate-500 dark:text-slate-300'>{item.Name}</p>
+                                    <p className='font-inter  text-sm text-slate-500 dark:text-slate-300'>{item.Name}</p>
                                 </div>
                                 {index !== lastIndex && <div className='h-[0.5px] w-full left-0 bg-slate-300 dark:bg-slate-700' />  }
                             </div>

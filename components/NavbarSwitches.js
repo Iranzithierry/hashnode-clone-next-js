@@ -1,4 +1,4 @@
-import { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useAuth } from '@/auth/Auth'
 import * as SolidIcon from '@heroicons/react/24/solid'
 import * as OutlinedIcon from '@heroicons/react/24/outline'
@@ -48,25 +48,25 @@ export default function NavbarSwitches() {
     return (
         <div className='flex place-center w-full gap-2'>
             <button onClick={() => showModal(true)} className='cursor-pointer rounded-full hover:bg-gray-0 dark:hover:bg-dark-1 p-2 transition-colors duration-300 focus:ring-4 primary-ring'>
-                <SolidIcon.MagnifyingGlassIcon className="h-[1.8rem] w-[1.8rem] md:w-[2rem] md:h-[2rem] text-black dark:text-white" />
+                <SolidIcon.MagnifyingGlassIcon className="h-[1.4rem] w-[1.4rem] sm:h-[1.8rem] sm:w-[1.8rem] md:w-[2rem] md:h-[2rem] text-black dark:text-white" />
             </button>
             <button onClick={() => changeTheme()} className='cursor-pointer rounded-full hover:bg-gray-0 dark:hover:bg-dark-1 p-2 transition-colors duration-300 focus:ring-4 primary-ring'>
 
                 {isDark ?
                     (
-                        <SolidIcon.SunIcon className="h-[1.8rem] w-[1.8rem] md:w-[2rem] md:h-[2rem]  text-black dark:text-white" />
+                        <SolidIcon.SunIcon className="h-[1.4rem] w-[1.4rem] sm:h-[1.8rem] sm:w-[1.8rem] md:w-[2rem] md:h-[2rem]  text-black dark:text-white" />
                     )
                     : (
-                        <OutlinedIcon.MoonIcon className="h-[1.8rem] w-[1.8rem] md:w-[2rem] md:h-[2rem]  text-black" />
+                        <OutlinedIcon.MoonIcon className="h-[1.4rem] w-[1.4rem] sm:h-[1.8rem] sm:w-[1.8rem] md:w-[2rem] md:h-[2rem]  text-black" />
                     )}
             </button>
-            <Suspense fallback={<p>Loading feed...</p>}>
-                {isLoggedIn ? (
+
+            {isLoggedIn ? (
                     <LoggedInDropDown />
-                ) : (
+            ) : (
                     <LoggedOutDropDown login={login} />
-                )}
-            </Suspense>
+            )}
+
 
             <Modal show={modal} onClose={closeModal}>
                 <div className='w-full mx-auto space-y-2'>

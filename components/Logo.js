@@ -17,7 +17,7 @@ export default function Logo({ Size, Src }) {
 
     switch (Size) {
         case 'sm':
-            Size = "h-12 w-12 md:h-[55px] md:w-[55px]"
+            Size = "h-10  w-10 sm:h-12 sm:w-12 md:h-[55px] md:w-[55px]"
             break;
         default:
             Size = "h-16 w-16 md:h-[80px] md:w-[80px]"

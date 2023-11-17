@@ -9,7 +9,6 @@
 .button {
     align-items: center;
     display: flex;
-    height: 40px;
     justify-content: center;
     @apply font-semibold ;
 }

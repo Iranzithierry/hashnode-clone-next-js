@@ -27,14 +27,14 @@ export default function LoggedOutDropDown({ login }) {
                             </div>
                         </div>
                         <div className='col-span-3 flex flex-col'>
-                            <p className='font-inter font-bold text-base text-slate-700 dark:text-slate-300'>IRANZI Thierry</p>
-                            <p className='font-inter font-semibold text-sm text-neutral-600 dark:text-slate-400'>@datrue</p>
+                            <p className='font-inter  font-semibold md:font-bold text-base text-slate-700 dark:text-slate-300'>IRANZI Thierry</p>
+                            <p className='font-inter font-normal md:font-semibold text-sm text-neutral-600 dark:text-slate-400'>@datrue</p>
                         </div>
                     </div>
                     <div className='h-[0.5px] w-full left-0 bg-slate-300 dark:bg-slate-700' />
                     <div className='py-4 px-6'>
-                        <p className='font-inter font-bold text-base text-slate-700 dark:text-slate-300'>Ready to get started?</p>
-                        <p className='font-inter font-semibold text-sm text-neutral-600 dark:text-slate-400'>Don't miss my next articles, sign in with a Hashnode account.</p>
+                        <p className='font-inter font-semibold md:font-bold text-base text-slate-700 dark:text-slate-300'>Ready to get started?</p>
+                        <p className='font-inter font-normal md:font-semibold text-sm text-neutral-600 dark:text-slate-400'>Don't miss my next articles, sign in with a Hashnode account.</p>
                         <Button fontClassArg={`text-sm xl:text-lg font-semibold`} classNameArg={'button focus:ring-2 focus:md:ring-4 group w-full px-8 py-5 rounded-3xl !h-[1rem] space-x-2 mt-2'} icon={<SolidIcon.ArrowRightOnRectangleIcon className="h-[1.3rem] w-[1.3rem] md:w-[1.5rem] md:h-[1.5rem]  text-white" />} onPress={() => login()}>
                             Sing in
                         </Button>
@@ -44,14 +44,14 @@ export default function LoggedOutDropDown({ login }) {
                         <span>
                             <OutlinedIcon.QuestionMarkCircleIcon className="h-[1rem] w-[1rem] md:w-[1.2rem] md:h-[1.2rem] text-black dark:text-white" />
                         </span>
-                        <p className='font-inter font-semibold text-sm text-slate-700 dark:text-slate-300'>What's Hashnode?</p>
+                        <p className='font-inter md:font-semibold text-sm text-slate-700 dark:text-slate-300'>What's Hashnode?</p>
                     </div>
                     <div className='h-[0.5px] w-full left-0 bg-slate-300 dark:bg-slate-700' />
                     <div className='py-4 px-4 cursor-pointer rounded-b-3xl hover:bg-dark-0/5 dark:hover:bg-dark-0/20 flex space-x-2'>
                         <span>
                             <OutlinedIcon.PencilIcon className="h-[1rem] w-[1rem] md:w-[1.2rem] md:h-[1.2rem] text-black dark:text-white" />
                         </span>
-                        <p className='font-inter font-semibold text-sm text-slate-700 dark:text-slate-300'>Start publishing on Hashnode</p>
+                        <p className='font-inter md:font-semibold text-sm text-slate-700 dark:text-slate-300'>Start publishing on Hashnode</p>
                     </div>
                 </div>
             </Dropdown.Content>
