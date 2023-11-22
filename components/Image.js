@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-export default function Logo({ Size, Src }) {
+export default function StyledImage({ Size, Src, CustomSize = null }) {
 
     const keyStr =
         'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
@@ -29,9 +29,9 @@ export default function Logo({ Size, Src }) {
             height={100}
             placeholder="blur"
             blurDataURL={rgbDataURL(0, 105, 255)}
-            src={`${Src || 'https://cdn.hashnode.com/res/hashnode/image/upload/v1698155425458/bPInuIRrJ.png?w=400&h=400&fit=crop&crop=faces&auto=compress,format&format=webp'}`}
+            src={`${Src || '/logo.png'}`}
             alt="Logo"
-            className={`object-cover ${Size} rounded-full`}
+            className={`object-cover ${CustomSize ? CustomSize : Size} rounded-full`}
             decoding='async'
         />
     )

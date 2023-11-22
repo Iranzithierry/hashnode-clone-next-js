@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Logo from './Logo'
+import StyledImage from './Image'
 import * as SolidIcon from '@heroicons/react/24/solid'
-import SocialMediaHandler from './SocialMediaHandler';
+import SocialMediaHandler from './navbar_components/SocialMediaHandler';
 export default function Canvas({ onClose, showSidebar }) {
     const items = ["Home", "Github", "Badges", "News Letter"]
     const [width, setWidth] = useState("transform -translate-x-full")
@@ -21,7 +21,7 @@ export default function Canvas({ onClose, showSidebar }) {
                 <div className='h-full  w-full flex flex-col justify-items-center space-x-2 py-6 px-4'>
                     <div className='flex justify-between w-full '>
                         <a className='z-50 cursor-pointer rounded-full focus:ring-4 primary-ring' href='#'>
-                            <Logo Size={'sm'} />
+                            <StyledImage Size={'sm'} />
                         </a>
                         <div>
                             <button onClick={() => closeCanvas()} className='cursor-pointer rounded-full bg-gray-1/100 dark:bg-dark-0/75 hover:bg-gray-0 dark:hover:bg-dark-1 p-2 transition-colors duration-300 focus:ring-4 primary-ring'>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import NavbarSwitches from '@/components/NavbarSwitches'
-import SocialMediaHandler from './SocialMediaHandler';
-import Logo from './Logo';
-import ManageSection from './ManageSection';
-import HeaderTabs from './HeaderTabs';
+import NavbarSwitches from './navbar_components/NavbarSwitches';
+import SocialMediaHandler from './navbar_components/SocialMediaHandler';
+import StyledImage from './Image';
+import ManageSection from './navbar_components/ManageSection';
+import HeaderTabs from './navbar_components/HeaderTabs';
 import Canvas from './Canvas';
 import * as SolidIcon from '@heroicons/react/24/solid'
 import { AuthProvider } from '@/auth/Auth'
@@ -22,7 +22,7 @@ export default function Navbar() {
                     </button>
                 </div>
                 <a className='cursor-pointer hidden md:flex rounded-full focus:ring-4 primary-ring' href='#'>
-                    <Logo />
+                    <StyledImage />
                 </a>
                 <div>
                     <AuthProvider>
@@ -32,13 +32,13 @@ export default function Navbar() {
                 </div>
             </div>
             <a className='cursor-pointer flex md:hidden rounded-full focus:ring-4 primary-ring' href='#'>
-                <Logo />
+                <StyledImage />
             </a>
             <div className='flex flex-col-reverse md:flex-row w-full gap-y-2 md:gap-y-6 justify-center md:justify-between items-center '>
                 <div className='place-center w-full md:w-fit'>
                     <SocialMediaHandler />
                 </div>
-                <div className='place-center w-full md:w-fit'  placeholder='blur'>
+                <div className='place-center w-full md:w-fit' placeholder='blur'>
                     <AuthProvider>
                         <ManageSection />
                     </AuthProvider>
@@ -47,8 +47,11 @@ export default function Navbar() {
             <div className='hidden sm:flex'>
                 <HeaderTabs />
             </div>
-          
-            {showCanvas && ( <React.Suspense fallback={<p>Loading Canvas</p>}><Canvas onClose={closeCanvas} showSidebar={showCanvas} /> </React.Suspense>)}
+
+            {showCanvas && (
+                <React.Suspense fallback={<p>Loading Canvas</p>}>
+                    <Canvas onClose={closeCanvas} showSidebar={showCanvas} />
+                </React.Suspense>)}
         </nav>
     )
 }

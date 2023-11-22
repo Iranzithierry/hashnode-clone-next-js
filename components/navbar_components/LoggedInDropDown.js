@@ -1,7 +1,7 @@
 import React from 'react'
-import Dropdown from './DropDown'
+import Dropdown from '../DropDown'
 import * as SolidIcon from '@heroicons/react/24/solid'
-import Logo from './Logo';
+import StyledImage from '../Image';
 import { useAuth } from '@/auth/Auth'
 export default function LoggedInDropDown() {
     const { logout } = useAuth();
@@ -47,7 +47,7 @@ export default function LoggedInDropDown() {
         <Dropdown>
             <Dropdown.Trigger>
                 <button className='cursor-pointer rounded-full focus:ring-4 primary-ring'>
-                    <Logo Size={'sm'} />
+                    <StyledImage Size={'sm'} />
                 </button>
             </Dropdown.Trigger>
 
@@ -58,7 +58,7 @@ export default function LoggedInDropDown() {
                         const firstIndex = 0
                         return (
                             <div key={index}>
-                                <div className={`py-4 px-4 cursor-pointer ${firstIndex === index ? 'rounded-t-3xl' : ''} ${lastIndex === index ? 'rounded-b-3xl' : ''} hover:bg-dark-0/5 dark:hover:bg-dark-0/20 flex space-x-2`} onClick={() => item.OnPress()}>
+                                <div className={`py-4 px-4 cursor-pointer ${firstIndex === index ? 'rounded-t-3xl' : ''} ${lastIndex === index ? 'rounded-b-3xl' : ''} hover:bg-dark-0/5 dark:hover:bg-dark-0/20 flex space-x-2`} onClick={() => item.OnPress !== null ? item.OnPress() : removeEventListener}>
                                     <span>
                                         <item.Icon className="h-[1rem] w-[1rem] md:w-[1.2rem] md:h-[1.2rem] text-slate-500 dark:text-white" />
                                     </span>

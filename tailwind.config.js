@@ -29,6 +29,7 @@ module.exports = {
       },
       fontWeight: {
         bold: "700",
+        extrabold: "900"
       },
       padding: {
         xl: '1.7rem 3rem ',

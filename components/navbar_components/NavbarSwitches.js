@@ -2,7 +2,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 import { useAuth } from '@/auth/Auth'
 import * as SolidIcon from '@heroicons/react/24/solid'
 import * as OutlinedIcon from '@heroicons/react/24/outline'
-import Modal from './Modal';
+import Modal from '../Modal';
 import LoggedOutDropDown from './LoggedOutDropDown';
 import LoggedInDropDown from './LoggedInDropDown';
 export default function NavbarSwitches() {

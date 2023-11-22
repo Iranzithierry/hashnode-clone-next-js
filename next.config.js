@@ -2,7 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.hashnode.com'],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "**.*.*",
+        },
+        {
+          protocol: "https",
+          hostname: "**.**.*.*",
+        },
+        {
+          protocol: "https",
+          hostname: "cdn.hashnode.com",
+        },
+      ],
   },
 }
 

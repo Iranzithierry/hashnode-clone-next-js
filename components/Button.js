@@ -4,7 +4,6 @@ export default function Button(
         onPress,
         children,
         backgroundColor,
-        textColor,
         classNameArg,
         fontClassArg,
         disabled,
@@ -35,7 +34,7 @@ export default function Button(
             <span>
                 {icon}
             </span>
-            <p className={`${fontClassArg || ''} ${textColor || 'text-white'} font-inter`}>
+            <p className={`${fontClassArg || ''} font-inter`}>
                 {children}
             </p>
             {showSpinner && spinnerSide === 'right' && !disabled && (
